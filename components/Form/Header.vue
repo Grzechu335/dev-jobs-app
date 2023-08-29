@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="absolute bottom-0 h-[40px] w-full px-6 tablet:px-10 desktop:px-0"
+		class="absolute -bottom-6 tablet:bottom-0 h-[40px] w-full px-6 tablet:px-10 desktop:px-0"
 	>
 		<div
 			class="max-w-[1100px] mx-auto bg-white dark:bg-very-dark-blue overflow-hidden rounded-md"
