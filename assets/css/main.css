@@ -24,30 +24,11 @@
 	p {
 		@apply text-[16px] leading-[26px];
 	}
-
-	@media only screen and (min-width: 1100px) {
-		#header {
-			background-image: url("/assets/desktop/bg-pattern-header.svg");
-			background-size: cover;
-		}
-	}
-	@media only screen and (min-width: 768px) {
-		#header {
-			background-image: url("/assets/tablet/bg-pattern-header.svg");
-			background-size: cover;
-		}
-	}
-	@media only screen and (max-width: 768px) {
-		#header {
-			background-image: url("/assets/mobile/bg-pattern-header.svg");
-			background-size: cover;
-		}
-	}
 }
 
 @layer components {
 	.btn {
-		@apply px-3 desktop:px-9 py-4 text-[16px] font-bold rounded-[5px];
+		@apply px-3 desktop:px-9  py-4 text-[16px] font-bold rounded-[5px];
 	}
 	.btn-primary {
 		@apply text-white bg-violet hover:bg-light-violet;

@@ -11,6 +11,7 @@ export default defineNuxtConfig({
 		"nuxt-icon",
 		"nuxt-headlessui",
 		"@nuxtjs/color-mode",
+		"@pinia/nuxt",
 	],
 	googleFonts: {
 		subsets: ["latin"],
