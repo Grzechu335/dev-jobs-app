@@ -3,68 +3,99 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply font-kumbh;
-  }
-  h1 {
-    @apply text-[28px] leading-[34px] font-bold;
-  }
-  h2 {
-    @apply text-[24px] leading-[29px] font-bold;
-  }
-  h3 {
-    @apply text-[20px] leading-[24px] font-bold;
-  }
-  h4 {
-    @apply text-[14px] leading-[18px];
-  }
-  p {
-    @apply text-[16px] leading-[26px];
-  }
+	* {
+		@apply transition-colors;
+	}
+	body {
+		@apply font-kumbh bg-light-grey dark:bg-midnight;
+	}
+	h1 {
+		@apply text-[28px] leading-[34px] font-bold;
+	}
+	h2 {
+		@apply text-[24px] leading-[29px] font-bold;
+	}
+	h3 {
+		@apply text-[20px] leading-[24px] font-bold;
+	}
+	h4 {
+		@apply text-[14px] leading-[18px];
+	}
+	p {
+		@apply text-[16px] leading-[26px];
+	}
+
+	@media only screen and (min-width: 1100px) {
+		#header {
+			background-image: url("/assets/desktop/bg-pattern-header.svg");
+			background-size: cover;
+		}
+	}
+	@media only screen and (min-width: 768px) {
+		#header {
+			background-image: url("/assets/tablet/bg-pattern-header.svg");
+			background-size: cover;
+		}
+	}
+	@media only screen and (max-width: 768px) {
+		#header {
+			background-image: url("/assets/mobile/bg-pattern-header.svg");
+			background-size: cover;
+		}
+	}
 }
 
 @layer components {
-  .btn {
-    @apply px-10 py-4 text-[16px] font-bold rounded-[5px];
-  }
-  .btn-primary {
-    @apply text-white bg-violet hover:bg-light-violet;
-  }
-  .btn-secondary {
-    @apply bg-violet/10 text-violet hover:bg-violet/[0.35] dark:bg-white/10 dark:text-white dark:hover:bg-white/[0.35];
-  }
-  .checkbox {
-    display: flex;
-    align-items: center;
-    span {
-      margin-left: 16px;
-    }
-    input[type="checkbox"] {
-      -webkit-appearance: none;
-      appearance: none;
-      background-color: #19202d10;
-      margin: 0;
-      font: inherit;
-      width: 24px;
-      height: 24px;
-      border-radius: 3px;
-      display: grid;
-      place-content: center;
-      font-weight: bold;
-      display: grid;
-      place-content: center;
-      &:hover {
-        background-color: #5964e025;
-      }
-      &:checked {
-        background: url("/assets/checkIcon.svg");
-      }
-    }
-  }
+	.btn {
+		@apply px-3 desktop:px-9 py-4 text-[16px] font-bold rounded-[5px];
+	}
+	.btn-primary {
+		@apply text-white bg-violet hover:bg-light-violet;
+	}
+	.btn-secondary {
+		@apply bg-violet/10 text-violet hover:bg-violet/[0.35] dark:bg-white/10 dark:text-white dark:hover:bg-white/[0.35];
+	}
+
+	.checkbox {
+		display: flex;
+		align-items: center;
+		span {
+			margin-left: 16px;
+		}
+
+		input[type="checkbox"] {
+			-webkit-appearance: none;
+			flex-shrink: 1;
+			appearance: none;
+			background-color: #19202d10;
+			margin: 0;
+			font: inherit;
+			width: 24px;
+			height: 24px;
+			border-radius: 3px;
+			display: grid;
+			place-content: center;
+			font-weight: bold;
+			display: grid;
+			place-content: center;
+			&:hover {
+				background-color: #5964e025;
+			}
+			&:checked {
+				background: url("/assets/checkIcon.svg");
+			}
+			&:is(.dark &) {
+				background-color: #ffffff10;
+				&:hover {
+					background-color: #ffffff50;
+				}
+			}
+		}
+	}
 }
 
 @layer utilities {
-  .bg-transparent {
-    background-color: transparent;
-  }
+	.bg-transparent {
+		background-color: transparent;
+	}
 }

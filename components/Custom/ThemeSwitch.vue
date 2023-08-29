@@ -2,13 +2,13 @@
   <div class="inline-flex items-center space-x-3">
     <Icon name="ph:sun" size="20" color="#fff" />
     <HeadlessSwitch
-      v-model="enabled"
-      @update:model-value="testUpdate"
-      :class="enabled ? 'bg-blue-600' : 'bg-gray-200'"
+      :default-checked="$colorMode.value === 'dark'"
+      :class="$colorMode.value === 'dark' ? 'bg-blue-600' : 'bg-gray-200'"
+      @update:model-value="toggleColorMode"
       class="relative inline-flex items-center w-12 h-6 bg-white rounded-full group"
     >
       <span
-        :class="enabled ? 'translate-x-7' : 'translate-x-1'"
+        :class="$colorMode.value === 'dark' ? 'translate-x-7' : 'translate-x-1'"
         class="inline-block w-4 h-4 transition transform rounded-full bg-violet group-hover:bg-light-violet"
       />
     </HeadlessSwitch>
@@ -17,14 +17,13 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{
-  modelValue: boolean;
-}>();
-const enabled = ref(false);
-const emit = defineEmits<{
-  "update:modelValue": [newValue: boolean];
-}>();
-function testUpdate(newValue: boolean) {
-  emit("update:modelValue", newValue);
+const colorMode = useColorMode();
+
+function toggleColorMode() {
+  if (colorMode.value === "light") {
+    colorMode.preference = "dark";
+  } else {
+    colorMode.preference = "light";
+  }
 }
 </script>
