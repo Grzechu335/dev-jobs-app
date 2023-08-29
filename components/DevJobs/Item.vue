@@ -1,7 +1,7 @@
 <template>
 	<NuxtLink
 		:to="`job/${job.id}`"
-		class="p-8 relative pt-[49px] group flex flex-col justify-between bg-white rounded-md dark:bg-very-dark-blue"
+		class="p-8 relative pt-[49px] group flex flex-col justify-between bg-white rounded-md dark:bg-very-dark-blue shadow-lg"
 	>
 		<div
 			:style="`background-color: ${job.logoBackground}`"
