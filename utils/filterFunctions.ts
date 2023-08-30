@@ -3,7 +3,7 @@ import { JobType } from "~/types/Job";
 const contractRecord: Record<string, boolean> = {
 	"Part Time": false,
 	"Full Time": true,
-	Freelancer: false,
+	Freelance: false,
 };
 
 interface Filters {

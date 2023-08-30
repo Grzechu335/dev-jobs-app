@@ -24,6 +24,7 @@ const { getJobs } = useJobs();
 const filters = useFilters();
 
 const filteredJobs = computed(() => {
+	console.log(getJobs);
 	let filteredArr = getJobs.filter(
 		(job) =>
 			fullTimeFilter(job, filters.getFilters) &&
