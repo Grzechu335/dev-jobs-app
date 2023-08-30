@@ -2,9 +2,9 @@
 	<label
 		class="flex items-center px-6 bg-white desktop:px-8 dark:bg-very-dark-blue py-7 caret-violet"
 	>
-		<div class="hidden tablet:block">
+		<div :class="showIcon ? '' : 'hidden tablet:block'">
 			<Icon
-				v-if="iconName"
+				v-if="showIcon"
 				:name="iconName"
 				:color="iconColor"
 				:size="iconSize"
@@ -30,10 +30,13 @@
 type InputProps = {
 	placeholder: string;
 	modelValue: string;
-	iconName?: string;
-	iconColor?: string;
-	iconSize?: string;
+	iconName: string;
+	iconColor: string;
+	iconSize: string;
+	showIcon?: boolean;
 };
 
-defineProps<InputProps>();
+withDefaults(defineProps<InputProps>(), {
+	showIcon: true,
+});
 </script>

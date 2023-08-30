@@ -23,17 +23,45 @@
 			<h3
 				class="mt-4 dark:text-white group-hover:text-dark-grey text-very-dark-blue"
 			>
-				{{ job.position }}
+				<span
+					:class="
+						filters.mainFilter.includes(letter) &&
+						'bg-very-dark-blue/30 dark:bg-white/30'
+					"
+					v-for="letter in job.position"
+					>{{ letter }}</span
+				>
 			</h3>
-			<p class="mt-3 text-dark-grey">{{ job.company }}</p>
+			<p class="mt-3 text-dark-grey">
+				<span
+					:class="
+						filters.mainFilter.includes(letter) &&
+						'bg-very-dark-blue/30 dark:bg-white/30'
+					"
+					v-for="letter in job.company"
+					>{{ letter }}</span
+				>
+			</p>
 		</div>
-		<h4 class="font-bold mt-11 text-violet">{{ job.location }}</h4>
+		<h4 class="font-bold mt-11 text-violet">
+			<span
+				:class="
+					filters.location.includes(letter) &&
+					'bg-very-dark-blue/30 dark:bg-white/30'
+				"
+				v-for="letter in job.location"
+				>{{ letter }}</span
+			>
+		</h4>
 	</NuxtLink>
 </template>
 
 <script setup lang="ts">
+import { useFilters } from "~/store/useFilters";
 import { JobType } from "~/types/Job";
 defineProps<{
 	job: JobType;
 }>();
+
+const filters = useFilters();
 </script>
