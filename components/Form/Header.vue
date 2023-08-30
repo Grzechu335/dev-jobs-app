@@ -34,10 +34,11 @@
 						@click="modal.toggleModal()"
 					/>
 					<CustomButton
+						@click="filter.resetFilters()"
 						variant="primary"
 						class="grid w-12 h-12 place-content-center"
 					>
-						<Icon name="mdi-light:magnify" size="28" color="#fff" />
+						<Icon name="mdi-clear-outline" size="20" color="#fff" />
 					</CustomButton>
 				</div>
 				<div
