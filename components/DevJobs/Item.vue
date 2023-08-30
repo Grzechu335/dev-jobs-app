@@ -47,7 +47,7 @@
 			<span
 				:class="
 					filters.location.includes(letter) &&
-					'bg-very-dark-blue/30 dark:bg-white/30'
+					'bg-very-dark-blue/10 dark:bg-white/10'
 				"
 				v-for="letter in job.location"
 				>{{ letter }}</span
