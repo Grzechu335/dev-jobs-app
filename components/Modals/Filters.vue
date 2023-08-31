@@ -1,7 +1,7 @@
 <template>
 	<div
 		v-if="modal.getFilterModalState"
-		class="fixed left-0 flex justify-center items-center top-0 w-screen h-screen z-[999] px-6 bg-midnight/80 tablet:hidden"
+		class="fixed left-0 flex justify-center items-center top-0 w-screen h-full z-[999] px-6 bg-midnight/80 tablet:hidden"
 		@click="modal.toggleModal()"
 	>
 		<div
