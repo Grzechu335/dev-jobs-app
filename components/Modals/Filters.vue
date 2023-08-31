@@ -37,4 +37,10 @@ import { useModal } from "~/store/useModal";
 
 const modal = useModal();
 const filters = useFilters();
+
+watch(modal, () => {
+	document.body.style.overflow = modal.getFilterModalState
+		? "hidden"
+		: "auto";
+});
 </script>
